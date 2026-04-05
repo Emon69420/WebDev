@@ -12,12 +12,12 @@ const Hero = () => {
           </div>
           <h1 className="font-headline text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-8 text-[#39382f]">
             We help you grow your{' '}
-            <span className="relative">
+            <span className="relative sketch-underline decoration-[#FF7F6A] decoration-wavy">
               vacation rental
               <span className="absolute -bottom-1 left-0 w-full h-4 bg-[#FF7F6A]/40 -z-10 rotate-1"></span>
             </span>{' '}
             business with{' '}
-            <span className="italic underline decoration-[#FF7F6A] decoration-wavy">
+            <span className="italic decoration-[#FF7F6A] decoration-wavy">
               direct bookings
             </span>
             .
