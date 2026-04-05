@@ -5,7 +5,7 @@ const Impact = () => {
     <section className="py-24 px-8 overflow-hidden relative">
       {/* Doodly Background Plane */}
       <span className="material-symbols-outlined absolute top-1/4 right-10 text-[#FF7F6A]/10 text-[300px] -rotate-12 select-none">
-        paperplane
+        beach_access
       </span>
       <div className="max-w-7xl mx-auto">
         <div className="bg-white marker-border rounded-3xl p-12 md:p-20 relative overflow-hidden">

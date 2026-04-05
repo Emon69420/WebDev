@@ -2,7 +2,7 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-    <section className="relative px-8 py-20 md:py-32 overflow-hidden">
+    <section className="relative px-1 py-20 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="relative z-10">

@@ -14,9 +14,7 @@ const Testimonials = () => {
   return (
     <section className="py-24 px-8 bg-[#fdf9f1]">
       <div className="max-w-7xl mx-auto text-center mb-20 relative">
-        <span className="material-symbols-outlined absolute -top-12 left-1/2 -translate-x-1/2 text-primary/20 text-7xl">
-          chat_bubble
-        </span>
+
         <h2 className="font-headline text-4xl md:text-5xl font-black mb-4 tracking-tight">
           Trusted by Property Visionaries
         </h2>

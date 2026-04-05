@@ -8,9 +8,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl relative">
-            <span className="material-symbols-outlined absolute -top-12 -left-8 text-[#FF7F6A]/30 text-6xl">
-              draw
-            </span>
+
             <h2 className="font-headline text-4xl md:text-5xl font-black text-[#39382f] mb-6">
               Digital Marketing Built For Your{' '}
               <span className="italic text-primary sketch-underline">Vacation Rental</span> Brand
