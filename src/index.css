@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material Symbols settings */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Sketch underline highlight effect */
+.sketch-underline {
+    background-image: linear-gradient(120deg, #FF7F6A 0%, #FF7F6A 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 95%;
+    padding-bottom: 4px;
+}
+
+/* Wavy underline decoration */
+.wavy-underline {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #FF7F6A;
+    text-underline-offset: 8px;
+}
+
+/* Float animation for doodle elements */
+.doodle-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Polaroid photo card style */
+.polaroid {
+    background: white;
+    padding: 1rem 1rem 3rem 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+/* Marker-drawn border style */
+.marker-border {
+    border: 3px solid #39382f;
+    box-shadow: 4px 4px 0px #FF7F6A;
+}
+
+/* Dotted journal texture background */
+.journal-texture {
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+}
