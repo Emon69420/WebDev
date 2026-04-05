@@ -14,32 +14,16 @@ const Header = () => {
           >
             Home
           </a>
+
           <a
             className="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] font-headline font-bold tracking-tight hover:bg-[#FF7F6A]/5 transition-all duration-300 active:scale-95 cursor-pointer"
             href="#"
           >
-            Services
-          </a>
-          <a
-            className="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] font-headline font-bold tracking-tight hover:bg-[#FF7F6A]/5 transition-all duration-300 active:scale-95 cursor-pointer"
-            href="#"
-          >
-            Case Studies
-          </a>
-          <a
-            className="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] font-headline font-bold tracking-tight hover:bg-[#FF7F6A]/5 transition-all duration-300 active:scale-95 cursor-pointer"
-            href="#"
-          >
-            About
+            Contact Us
           </a>
         </div>
         <div className="flex items-center gap-4">
-          <span className="material-symbols-outlined text-[#39382f] cursor-pointer">
-            account_circle
-          </span>
-          <button className="bg-[#ac4131] hover:bg-[#ac4131]/90 text-white font-headline font-bold px-6 py-2 rounded-full transition-all active:scale-95">
-            Book Now
-          </button>
+
         </div>
       </nav>
     </header>
