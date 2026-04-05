@@ -100,8 +100,8 @@ const Contact = () => {
 
               {/* Form Container as Notebook Page */}
               <div className="bg-[#fdf9f1] notebook-edge ripped-edge p-8 md:p-12 shadow-2xl relative z-10 rotate-1 transform-gpu">
-                <div className="absolute -top-4 right-8 bg-[#ac4131] text-white px-4 py-1 text-xs font-bold -rotate-2 shadow-md">
-                  POSTCARD FROM: US
+                <div className="absolute top-4 right-8 bg-[#ac4131] text-white px-4 py-1 text-xs font-bold shadow-md">
+                  SEND US A POSTCARD
                 </div>
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
