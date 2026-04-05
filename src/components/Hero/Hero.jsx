@@ -47,9 +47,7 @@ const Hero = () => {
                 <span className="text-primary">50+</span> Owners scaled this year
               </p>
               {/* Doodle: Squiggly Arrow */}
-              <span className="material-symbols-outlined absolute -top-8 -right-4 text-primary opacity-40 text-4xl rotate-12">
-                conversion_path
-              </span>
+
             </div>
           </div>
         </div>
@@ -89,10 +87,10 @@ const Hero = () => {
             <span className="material-symbols-outlined text-[100px]">sunny</span>
           </div>
           <div
-            className="absolute top-1/2 -right-16 text-secondary/30 z-20 doodle-float"
+            className="absolute -op-1/2 -right-6 text-primary/30 z-20 doodle-float"
             style={{ animationDelay: '1s' }}
           >
-            <span className="material-symbols-outlined text-[80px]">palm_tree</span>
+            <span className="material-symbols-outlined text-[80px]">travel_luggage_and_bags</span>
           </div>
           <div className="absolute -top-10 left-1/4 text-primary/20 doodle-float">
             <span className="material-symbols-outlined text-6xl">airplanemode_active</span>

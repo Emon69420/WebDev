@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .sketch-border {
+            border: 2px solid #39382f;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .notebook-edge {
+            background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            border-left: 40px solid #fdf9f1;
+            position: relative;
+        }
+
+        .notebook-edge::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(172, 65, 49, 0.2);
+            box-shadow: 4px 0 0 rgba(172, 65, 49, 0.2);
+        }
+
+        .ripped-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 98%, 98% 100%, 96% 98%, 94% 100%, 92% 98%, 90% 100%, 88% 98%, 86% 100%, 84% 98%, 82% 100%, 80% 98%, 78% 100%, 76% 98%, 74% 100%, 72% 98%, 70% 100%, 68% 98%, 66% 100%, 64% 98%, 62% 100%, 60% 98%, 58% 100%, 56% 98%, 54% 100%, 52% 98%, 50% 100%, 48% 98%, 46% 100%, 44% 98%, 42% 100%, 40% 98%, 38% 100%, 36% 98%, 34% 100%, 32% 98%, 30% 100%, 28% 98%, 26% 100%, 24% 98%, 22% 100%, 20% 98%, 18% 100%, 16% 98%, 14% 100%, 12% 98%, 10% 100%, 8% 98%, 6% 100%, 4% 98%, 2% 100%, 0% 98%);
+        }
+
+        .marker-underline {
+            background-image: linear-gradient(120deg, #FF7F6A33 0%, #FF7F6A33 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ac4131",
+                        "primary-container": "#FF7F6A26",
+                        "on-primary-container": "#ac4131",
+                        "background": "#fffbff",
+                        "surface": "#fffbff",
+                        "surface-container": "#fdf9f1",
+                        "on-surface": "#39382f",
+                        "on-surface-variant": "#4a6a6a",
+                        "outline": "#ac413133"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-[#fffbff] font-body text-[#39382f] selection:bg-[#FF7F6A]/30">
+    <!-- TopAppBar Component -->
+    <nav
+        class="bg-[#fffbff] dark:bg-stone-950 border-b-4 border-[#FF7F6A]/20 border-dashed sticky top-0 z-50 transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-black text-[#39382f] dark:text-stone-100 italic font-headline tracking-tight">
+                SketchBook Rentals
+            </div>
+            <div class="hidden md:flex space-x-8 items-center font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+                <a class="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] hover:bg-[#FF7F6A]/5 transition-colors duration-300 active:scale-95 transition-transform"
+                    href="#">Destinations</a>
+                <a class="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] hover:bg-[#FF7F6A]/5 transition-colors duration-300 active:scale-95 transition-transform"
+                    href="#">Journals</a>
+                <a class="text-[#39382f] dark:text-stone-400 hover:text-[#ac4131] hover:bg-[#FF7F6A]/5 transition-colors duration-300 active:scale-95 transition-transform"
+                    href="#">Host</a>
+                <a class="text-[#ac4131] border-b-2 border-[#ac4131] pb-1 hover:bg-[#FF7F6A]/5 transition-colors duration-300 active:scale-95 transition-transform"
+                    href="#">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-[#ac4131] text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-[#ac4131]/20 hover:scale-105 active:scale-95 transition-all duration-300 text-sm">
+                    Book Now
+                </button>
+                <span
+                    class="material-symbols-outlined text-[#39382f] dark:text-stone-100 cursor-pointer">account_circle</span>
+            </div>
+        </div>
+    </nav>
+    <main class="min-h-screen relative overflow-hidden">
+        <!-- Background Doodles -->
+        <div class="absolute top-20 right-10 w-32 h-32 text-[#ac4131]/10 pointer-events-none rotate-12">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 100">
+                <path d="M10 80 Q 50 10 90 80 M 30 80 Q 50 40 70 80" stroke-linecap="round"></path>
+                <path d="M45 20 L 55 20 M 40 35 L 60 35" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative z-10">
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-[#FF7F6A26] text-[#ac4131] text-xs font-bold mb-6 tracking-wide uppercase border-2 border-dashed border-[#ac4131]/30">
+                        Get In Touch
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl font-extrabold font-headline leading-[1.1] mb-6 tracking-tight text-[#39382f]">
+                        Let's Talk About <br />
+                        <span class="relative inline-block">
+                            Your Growth.
+                            <svg class="absolute -bottom-4 left-0 w-full h-4 text-[#FF7F6A] opacity-60"
+                                preserveaspectratio="none" viewbox="0 0 100 20">
+                                <path d="M2 15 C 20 15 20 5 40 5 C 60 5 60 15 80 15 C 90 15 100 10 100 10" fill="none"
+                                    stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+                            </svg>
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-[#4a6a6a] max-w-xl leading-relaxed mb-8 font-medium italic">
+                        Ready to elevate your vacation rental brand? Our consultations are a deep dive into your
+                        property's potential. We’ll sketch out a strategy that turns casual browsers into lifelong
+                        guests.
+                    </p>
+                    <div class="flex flex-col gap-6 mt-12">
+                        <div class="flex items-center gap-4 group cursor-default">
+                            <div
+                                class="w-12 h-12 sketch-border flex items-center justify-center text-[#ac4131] transition-transform group-hover:rotate-6">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#39382f] font-headline">Office Hours</h4>
+                                <p class="text-sm text-[#4a6a6a]">Mon – Fri: 9:00 AM - 6:00 PM EST</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group cursor-default">
+                            <div
+                                class="w-12 h-12 sketch-border flex items-center justify-center text-[#ac4131] transition-transform group-hover:-rotate-6">
+                                <span class="material-symbols-outlined">share</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#39382f] font-headline">Connect With Us</h4>
+                                <div class="flex gap-4 mt-1">
+                                    <a class="text-sm text-[#4a6a6a] hover:text-[#ac4131] transition-colors marker-underline"
+                                        href="#">LinkedIn</a>
+                                    <a class="text-sm text-[#4a6a6a] hover:text-[#ac4131] transition-colors marker-underline"
+                                        href="#">Instagram</a>
+                                    <a class="text-sm text-[#4a6a6a] hover:text-[#ac4131] transition-colors marker-underline"
+                                        href="#">Twitter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative pt-10">
+                    <!-- Paper Plane Animation Path -->
+                    <div class="absolute -top-10 right-0 w-48 h-48 opacity-20 pointer-events-none">
+                        <svg fill="none" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 180 Q 50 100 180 20" stroke="#ac4131" stroke-dasharray="8 8" stroke-width="2">
+                            </path>
+                            <path d="M170 10 L 190 20 L 175 35 L 170 10 Z" fill="#ac4131"></path>
+                        </svg>
+                    </div>
+                    <!-- Form Container as Notebook Page -->
+                    <div
+                        class="bg-[#fdf9f1] notebook-edge ripped-edge p-8 md:p-12 shadow-2xl relative z-10 rotate-1 transform-gpu">
+                        <div
+                            class="absolute -top-4 right-8 bg-[#ac4131] text-white px-4 py-1 text-xs font-bold -rotate-2 shadow-md">
+                            POSTCARD FROM: US</div>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-[#39382f] font-label">Name</label>
+                                    <input
+                                        class="w-full bg-transparent border-b-2 border-[#ac4131]/20 focus:border-[#ac4131] focus:ring-0 transition-all placeholder:text-[#4a6a6a]/40 font-medium py-2"
+                                        placeholder="Your name" type="text" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-[#39382f] font-label">Email</label>
+                                    <input
+                                        class="w-full bg-transparent border-b-2 border-[#ac4131]/20 focus:border-[#ac4131] focus:ring-0 transition-all placeholder:text-[#4a6a6a]/40 font-medium py-2"
+                                        placeholder="hello@adventure.com" type="email" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-[#39382f] font-label">Website URL <span
+                                        class="text-xs font-normal opacity-60">(Optional)</span></label>
+                                <input
+                                    class="w-full bg-transparent border-b-2 border-[#ac4131]/20 focus:border-[#ac4131] focus:ring-0 transition-all placeholder:text-[#4a6a6a]/40 font-medium py-2"
+                                    placeholder="https://yourrental.com" type="url" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-[#39382f] font-label">Your Goal / Message</label>
+                                <textarea
+                                    class="w-full bg-[#39382f]/5 border-2 border-dashed border-[#ac4131]/20 rounded-xl p-4 focus:border-[#ac4131] focus:ring-0 transition-all placeholder:text-[#4a6a6a]/40 resize-none font-medium"
+                                    placeholder="Tell us your story..." rows="4"></textarea>
+                            </div>
+                            <button
+                                class="w-full bg-[#ac4131] text-white font-bold py-4 rounded-full shadow-lg hover:shadow-[#ac4131]/30 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 group overflow-hidden relative"
+                                type="submit">
+                                <span class="relative z-10 flex items-center gap-2">
+                                    Send Inquiry
+                                    <span
+                                        class="material-symbols-outlined group-hover:translate-x-12 group-hover:-translate-y-12 transition-all duration-500">send</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Coffee Stain Doodle -->
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 opacity-10 pointer-events-none">
+                        <svg class="text-[#39382f]" fill="currentColor" viewbox="0 0 100 100">
+                            <circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="0.5">
+                            </circle>
+                            <path d="M10 50 A 40 40 0 1 1 90 50" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-width="4"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Map Section with Tonal Shift -->
+        <section class="bg-[#fdf9f1] py-24 px-8 relative overflow-hidden">
+            <!-- Sun Doodle -->
+            <div class="absolute top-10 left-10 w-20 h-20 text-[#FF7F6A] opacity-20 animate-pulse">
+                <svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 100 100">
+                    <circle cx="50" cy="50" r="15"></circle>
+                    <path
+                        d="M50 10 L 50 25 M 50 75 L 50 90 M 10 50 L 25 50 M 75 50 L 90 50 M 22 22 L 32 32 M 68 68 L 78 78 M 22 78 L 32 68 M 68 22 L 78 32"
+                        stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="w-full md:w-1/2 order-2 md:order-1 relative">
+                        <div
+                            class="relative p-4 sketch-border bg-white shadow-xl -rotate-2 transition-transform hover:rotate-0 duration-500">
+                            <div class="relative rounded-lg overflow-hidden aspect-video md:aspect-square bg-stone-100">
+                                <img alt="Office Location Map"
+                                    class="w-full h-full object-cover sepia-[.3] contrast-75 brightness-110"
+                                    data-alt="stylized minimalist map illustration of a coastal town with soft warm tones and hand-drawn marker highlights on key locations"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgfk9WINgd4bx3iueo6nN3luib_ypgqrGE6ZgHUdk0f84UvaL6DOZgVc_HEJu5AlrH8qhhH6rSSeF22I6lU78hAYPOhgWDuRb06xycJq2pSGuim3wU8dQjmlGgYiffjfjWAcqY9AoPaNwv7bYbX4cntEYdgKWIi3NyzAS8XOhZnurPnD_-sG7o28fnBN_IOurOXti7oPFKhrXYiCbi2XHKazVm0o1P9wCltuGQzCw2qiF74hEQPl5s58WwW5Bxooq5Tw5OsrBjep8" />
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#ac4131]">
+                                    <div class="relative">
+                                        <span class="material-symbols-outlined text-6xl drop-shadow-lg"
+                                            style="font-variation-settings: 'FILL' 1;">push_pin</span>
+                                        <div
+                                            class="absolute -top-6 -right-12 bg-[#FF7F6A] text-white text-[10px] font-black px-3 py-1 rounded-full whitespace-nowrap shadow-md uppercase tracking-tighter">
+                                            Base Camp</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Compass Doodle -->
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 text-[#ac4131]/20">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40"></circle>
+                                <path d="M50 20 L 50 80 M 20 50 L 80 50 M 50 20 L 60 50 L 50 80 L 40 50 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 order-1 md:order-2">
+                        <h2 class="text-4xl font-extrabold font-headline mb-6 text-[#39382f]">Built for Explorers,
+                            <br /><span class="marker-underline italic">by Explorers.</span></h2>
+                        <p class="text-[#4a6a6a] text-lg leading-relaxed mb-8 font-medium">
+                            We aren't just an agency; we're curators of experiences. Our value proposition is simple:
+                            <strong>We turn properties into destinations.</strong> We apply the same artisanal marketing
+                            approach that wins hearts and bookings.
+                        </p>
+                        <div class="relative p-8 bg-white sketch-border">
+                            <div class="absolute -top-3 -left-3 text-[#ac4131]">
+                                <span class="material-symbols-outlined text-4xl">format_quote</span>
+                            </div>
+                            <p class="italic text-[#39382f] font-bold text-lg leading-relaxed">"SketchBook Rentals
+                                helped us double our occupancy in six months by telling our home's story, not just
+                                listing its amenities."</p>
+                            <p class="mt-4 text-sm font-black text-[#ac4131] uppercase tracking-widest">— Martha S.,
+                                Oceanfront Estates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Component -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col items-center gap-6 bg-[#fdf9f1] dark:bg-stone-900 border-t-[6px] border-[#ac4131] rounded-t-[50px] mt-20">
+        <div class="max-w-7xl w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div class="flex flex-col gap-2">
+                <div class="text-lg font-bold text-[#4a6a6a] font-['Be_Vietnam_Pro']">SketchBook Rentals</div>
+                <p class="text-sm text-[#4a6a6a] dark:text-stone-400 max-w-xs font-['Be_Vietnam_Pro']">Every stay is a
+                    story. Let's write yours together across the globe.</p>
+            </div>
+            <div class="flex flex-wrap gap-x-8 gap-y-4 font-['Be_Vietnam_Pro'] text-sm">
+                <a class="text-[#4a6a6a] dark:text-stone-400 hover:underline decoration-wavy decoration-[#FF7F6A]"
+                    href="#">Privacy Policy</a>
+                <a class="text-[#4a6a6a] dark:text-stone-400 hover:underline decoration-wavy decoration-[#FF7F6A]"
+                    href="#">Terms of Service</a>
+                <a class="text-[#4a6a6a] dark:text-stone-400 hover:underline decoration-wavy decoration-[#FF7F6A]"
+                    href="#">Travel Insurance</a>
+                <a class="font-bold text-[#ac4131] hover:underline decoration-wavy decoration-[#FF7F6A]"
+                    href="#">Contact Us</a>
+            </div>
+        </div>
+        <div
+            class="w-full border-t border-[#ac4131]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[#4a6a6a] dark:text-stone-400 text-xs font-['Be_Vietnam_Pro']">
+            <p>© 2024 SketchBook Rentals. Every stay is a story.</p>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-lg cursor-pointer hover:text-[#ac4131]">public</span>
+                <span
+                    class="material-symbols-outlined text-lg cursor-pointer hover:text-[#ac4131]">local_post_office</span>
+                <span
+                    class="material-symbols-outlined text-lg cursor-pointer hover:text-[#ac4131]">travel_explore</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
